@@ -102,7 +102,3 @@ class ModelTrainer:
             raise CustomException(e, sys)
 
 
-# # Example usage:
-# trainer = ModelTrainer()
-# r2_score = trainer.initiate_model_trainer("notebook/data/AQI.csv")
-# print("R2 Score:", r2_score)
