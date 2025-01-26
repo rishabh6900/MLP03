@@ -1,0 +1,46 @@
+<html>
+<body>
+    <div class="login">
+       <h1>AQI Prediction System</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Air Quality Index Prediction</legend>
+        </h1>
+        <!-- <div class="mb-3">
+            <label class="form-label">AQI Value</label>
+            <input class="form-control" type="number" name="AQI_Value" placeholder="Enter AQI Value" required />
+        </div> -->
+        <div class="mb-3">
+            <label class="form-label">CO AQI Value</label>
+            <input class="form-control" type="number" name="CO_AQI_Value" placeholder="Enter CO AQI Value" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ozone AQI Value</label>
+            <input class="form-control" type="number" name="Ozone_AQI_Value" placeholder="Enter Ozone AQI Value" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NO2 AQI Value</label>
+            <input class="form-control" type="number" name="NO2_AQI_Value" placeholder="Enter NO2 AQI Value" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PM2.5 AQI Value</label>
+            <input class="form-control" type="number" name="PM2_5_AQI_Value" placeholder="Enter PM2.5 AQI Value" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Latitude</label>
+            <input class="form-control" type="number" step="0.0001" name="latitude" placeholder="Enter Latitude" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Liquefied Natural Gas</label>
+            <input class="form-control" type="number" step="0.0001" name="Liquefied_Natural_Gas" placeholder="Enter LNG Value" required />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict AQI" />
+        </div>
+    </form>
+    <h2>
+       The prediction is: {{results}}
+    </h2>
+   <body>
+</html>

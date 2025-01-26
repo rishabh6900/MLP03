@@ -43,7 +43,7 @@ class ModelTrainer:
             # Define models and hyperparameters
             models = {
                 "Random Forest": RandomForestRegressor(),
-                "Decision Tree": DecisionTreeRegressor(),
+                # "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
                 "XGBRegressor": XGBRegressor(),
@@ -51,9 +51,9 @@ class ModelTrainer:
             }
 
             params = {
-                "Decision Tree": {
-                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson']
-                },
+                # "Decision Tree": {
+                #     'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson']
+                # },
                 "Random Forest": {
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
