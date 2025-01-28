@@ -26,10 +26,10 @@ class PredictPipeline:
 class CustomData:
     def __init__(
         self,
-        CO_AQI_Value: float,
-        Ozone_AQI_Value: float,
-        NO2_AQI_Value: float,
-        PM2_5_AQI_Value: float,
+        CO_AQI_Value: int,
+        Ozone_AQI_Value: int,
+        NO2_AQI_Value: int,
+        PM2_5_AQI_Value: int,
         latitude: float,
         Liquefied_Natural_Gas: float
     ):

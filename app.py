@@ -22,10 +22,10 @@ def predict_datapoint():
         # Collect data from the form
         data = CustomData(
             # AQI_Value=float(request.form.get('AQI_Value')),
-            CO_AQI_Value=float(request.form.get('CO_AQI_Value')),
-            Ozone_AQI_Value=float(request.form.get('Ozone_AQI_Value')),
-            NO2_AQI_Value=float(request.form.get('NO2_AQI_Value')),
-            PM2_5_AQI_Value=float(request.form.get('PM2_5_AQI_Value')),
+            CO_AQI_Value=int(request.form.get('CO_AQI_Value')),
+            Ozone_AQI_Value=int(request.form.get('Ozone_AQI_Value')),
+            NO2_AQI_Value=int(request.form.get('NO2_AQI_Value')),
+            PM2_5_AQI_Value=int(request.form.get('PM2_5_AQI_Value')),
             latitude=float(request.form.get('latitude')),
             Liquefied_Natural_Gas=float(request.form.get('Liquefied_Natural_Gas'))
         )
@@ -45,4 +45,4 @@ def predict_datapoint():
         return render_template('home.html', results=results[0])
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0")

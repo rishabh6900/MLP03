@@ -1,46 +1,135 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Prediction System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0066cc;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #004c99;
+        }
+
+        legend {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    </style>
+</head>
 <body>
     <div class="login">
-       <h1>AQI Prediction System</h1>
-   
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-        <h1>
+        <h1>AQI Prediction System</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
             <legend>Air Quality Index Prediction</legend>
-        </h1>
-        <!-- <div class="mb-3">
-            <label class="form-label">AQI Value</label>
-            <input class="form-control" type="number" name="AQI_Value" placeholder="Enter AQI Value" required />
-        </div> -->
-        <div class="mb-3">
-            <label class="form-label">CO AQI Value</label>
-            <input class="form-control" type="number" name="CO_AQI_Value" placeholder="Enter CO AQI Value" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Ozone AQI Value</label>
-            <input class="form-control" type="number" name="Ozone_AQI_Value" placeholder="Enter Ozone AQI Value" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">NO2 AQI Value</label>
-            <input class="form-control" type="number" name="NO2_AQI_Value" placeholder="Enter NO2 AQI Value" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">PM2.5 AQI Value</label>
-            <input class="form-control" type="number" name="PM2_5_AQI_Value" placeholder="Enter PM2.5 AQI Value" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Latitude</label>
-            <input class="form-control" type="number" step="0.0001" name="latitude" placeholder="Enter Latitude" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Liquefied Natural Gas</label>
-            <input class="form-control" type="number" step="0.0001" name="Liquefied_Natural_Gas" placeholder="Enter LNG Value" required />
-        </div>
-        <div class="mb-3">
-            <input class="btn btn-primary" type="submit" value="Predict AQI" />
-        </div>
-    </form>
-    <h2>
-       The prediction is: {{results}}
-    </h2>
-   <body>
+            <div class="mb-3">
+                <label class="form-label">CO AQI Value</label>
+                <input class="form-control" type="number" name="CO_AQI_Value" placeholder="Enter CO AQI Value" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ozone AQI Value</label>
+                <input class="form-control" type="number" name="Ozone_AQI_Value" placeholder="Enter Ozone AQI Value" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">NO2 AQI Value</label>
+                <input class="form-control" type="number" name="NO2_AQI_Value" placeholder="Enter NO2 AQI Value" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PM2.5 AQI Value</label>
+                <input class="form-control" type="number" name="PM2_5_AQI_Value" placeholder="Enter PM2.5 AQI Value" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Latitude</label>
+                <input class="form-control" type="number" step="0.0001" name="latitude" placeholder="Enter Latitude" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Liquefied Natural Gas</label>
+                <input class="form-control" type="number" step="0.0001" name="Liquefied_Natural_Gas" placeholder="Enter LNG Value" required />
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict AQI" />
+            </div>
+        </form>
+        <h2>
+            The prediction is: {{ results }}
+        </h2>
+    </div>
+</body>
 </html>
+

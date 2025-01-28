@@ -32,7 +32,7 @@ class DataTransformation:
                 "CO_AQI_Value",
                 "Ozone_AQI_Value",
                 "NO2_AQI_Value",
-                "PM2.5_AQI_Value",
+                "PM2_5_AQI_Value",
                 "latitude",
                 "Liquefied_Natural_Gas"
             ]

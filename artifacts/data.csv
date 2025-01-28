@@ -1,4 +1,4 @@
-AQI_Value,CO_AQI_Value,Ozone_AQI_Value,NO2_AQI_Value,PM2.5_AQI_Value,latitude,Liquefied_Natural_Gas
+AQI_Value,CO_AQI_Value,Ozone_AQI_Value,NO2_AQI_Value,PM2_5_AQI_Value,latitude,Liquefied_Natural_Gas
 51,1,36,0,51,44.7444,44.2031
 41,1,5,1,41,-5.29,-44.49
 41,1,5,1,41,-11.2958,-41.9869
