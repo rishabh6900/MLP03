@@ -68,8 +68,9 @@ class ModelTrainer:
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
                 "AdaBoost Regressor": {
-                    'learning_rate': [0.1, 0.01, 0.5, 0.001],
-                    'n_estimators': [8, 16, 32, 64, 128, 256]
+                    'learning_rate': [0.1, 0.01, 0.5, 0.001,1.0],
+                
+                    'n_estimators': [8, 16, 32,50, 64, 128, 256]
                 }
             }
 
