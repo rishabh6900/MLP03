@@ -38,7 +38,7 @@ def predict_datapoint():
         # Load the prediction pipeline and make predictions
         predict_pipeline = PredictPipeline()
         print("Mid Prediction")
-        results = predict_pipeline.predict(pred_df)
+        results = predict_pipeline.predict(pred_df)           # yahi tumhe dhoka de rahi hai
         print("After Prediction")
 
         # Render results on the home page
